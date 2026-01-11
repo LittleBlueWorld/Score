@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    const PASSWORD = "Borboleta";
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+
+      if (input === PASSWORD) {
+        localStorage.setItem("loggedIn", "True");
+        window.location = "game.html";
+      } else {
+        alert("Wrong password");
+      }
+    }
+
+    
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Enter password</h2>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="checkPassword()">Login</button>
+  </div>
+</body>
+</html>
