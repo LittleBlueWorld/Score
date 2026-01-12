@@ -60,13 +60,51 @@
     background: #ff5555;
     color: white;
   }
+
+  #countdown {
+  margin-top: 40px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ffcc;
+  }
+
 </style>
 
 <script>
   function logout() {
-    localStorage.removeItem("loggedIn");
-    window.location.replace("index.html");
+      localStorage.removeItem("loggedIn");
+      window.location.replace("index.html");
+    }
+  
+    function updateCountdown() {
+    const now = new Date();
+  
+    // End of the year (Dec 31, 23:59:59)
+    const endOfYear = new Date(
+      now.getFullYear(),
+      11,   // December (0-based)
+      31,
+      23,
+      59,
+      59
+    );
+  
+    const diffMs = endOfYear - now;
+  
+    if (diffMs <= 0) {
+      document.getElementById("countdown").innerText = "🎉 HAPPY NEW YEAR!";
+      return;
+    }
+  
+    const seconds = Math.floor(diffMs / 1000);
+    document.getElementById("countdown").innerText =
+      "Seconds until end of the year: " + seconds.toLocaleString();
   }
+  
+  // update every second
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
 </script>
 </head>
 
@@ -86,6 +124,7 @@
     </div>
 
   </div>
+  <div id="countdown">Loading…</div>
 
   <div class="controls">
     <button class="logout" onclick="logout()">Logout</button>
