@@ -60,11 +60,6 @@
     background: #ff5555;
     color: white;
   }
-
-  .reset {
-    background: #ffaa00;
-    color: black;
-  }
 </style>
 
 <script>
@@ -93,13 +88,6 @@
     localStorage.setItem("ilda", ilda);
   }
 
-  function reset() {
-    daniel = 0
-      ilda = 0
-      localStorage.clear()
-      load()
-    }
-
   function logout() {
     localStorage.removeItem("loggedIn");
     window.location.replace("index.html");
@@ -127,7 +115,6 @@
 
   <div class="controls">
     <button class="logout" onclick="logout()">Logout</button>
-    \\ <button class="reset" onclick="reset()">Reset</button>
   </div>
 
 </body>
