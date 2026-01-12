@@ -63,31 +63,6 @@
 </style>
 
 <script>
-  
-
-  let daniel = 0;
-  let ilda = 0;
-
-  function load() {
-    daniel = localStorage.getItem("daniel") || 0;
-    ilda = localStorage.getItem("ilda") || 0;
-
-    document.getElementById("daniel").innerText = daniel;
-    document.getElementById("ilda").innerText = ilda;
-  }
-
-  function somarDaniel() {
-    daniel++;
-    document.getElementById("daniel").innerText = daniel;
-    localStorage.setItem("daniel", daniel);
-  }
-
-  function somarIlda() {
-    ilda++;
-    document.getElementById("ilda").innerText = ilda;
-    localStorage.setItem("ilda", ilda);
-  }
-
   function logout() {
     localStorage.removeItem("loggedIn");
     window.location.replace("index.html");
@@ -95,7 +70,7 @@
 </script>
 </head>
 
-<body onload="load()">
+<body>
 
   <h1>Batalhinha Náutica</h1>
 
