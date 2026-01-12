@@ -3,6 +3,70 @@
 <head>
 <meta charset="utf-8">
 
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #0b1e2d;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .player {
+    width: 40%;
+    background: #12344d;
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+
+  .name {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .score {
+    font-size: 120px;
+    font-weight: bold;
+  }
+
+  .controls {
+    margin-top: 50px;
+  }
+
+  button {
+    font-size: 22px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .logout {
+    background: #ff5555;
+    color: white;
+  }
+
+  .reset {
+    background: #ffaa00;
+    color: black;
+  }
+</style>
+
 <script>
   
 
@@ -44,18 +108,28 @@
 </head>
 
 <body onload="load()">
+
   <h1>Batalhinha Náutica</h1>
 
-  <h2>Daniel: <span id="daniel">0</span></h2>
-  <button onclick="somarDaniel()">Daniel +1</button>
+  <div class="scoreboard">
 
-  <h2>Ilda: <span id="ilda">0</span></h2>
-  <button onclick="somarIlda()">Ilda +1</button>
+    <div class="player">
+      <div class="name">Daniel</div>
+      <div class="score" id="daniel">0</div>
+    </div>
 
-  <br><br>
-  <button onclick="logout()">Logout</button>
+    <div class="player">
+      <div class="name">Ilda</div>
+      <div class="score" id="ilda">0</div>
+    </div>
 
-  <br><br>
-  <button onclick="reset()">Reset</button>
+  </div>
+
+  <div class="controls">
+    <button class="logout" onclick="logout()">Logout</button>
+    <button class="reset" onclick="reset()">Reset</button>
+  </div>
+
 </body>
+
 </html>
